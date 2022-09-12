@@ -96,7 +96,7 @@ img {
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -104,11 +104,11 @@ img {
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -375,7 +375,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -383,11 +383,11 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -407,7 +407,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
 .index .carta-producto-precompra article .unidades-producto, .carta-producto-precompra article .index .unidades-producto, .index .formulario .datos-vivienda, .formulario .index .datos-vivienda, .index .datos-compra .compra-final .carta-compra, .datos-compra .compra-final .index .carta-compra, .index footer div .redes, footer div .index .redes, .index .MasVendidos > div {
   flex-direction: row;
 }
-.index .card .card-body button {
+.index .card .card-body button, .card .card-body .index button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -415,11 +415,11 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.index .card .card-body button:hover, .card .card-body .index button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.index .card .card-body button:active, .card .card-body .index button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -445,7 +445,10 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   width: 60%;
   margin: 12px auto;
 }
-.index .vista-personalizables > div {
+.index .vista-personalizables h2, .index .vista-personalizables h3, .index .vista-personalizables p {
+  text-align: center;
+}
+.index .vista-personalizables .scrolleable-personalizables {
   margin: 6rem auto;
 }
 .index .explicacion h2 {
@@ -456,6 +459,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin-bottom: 24px;
 }
 .index .explicacion ol li p {
+  text-align: start;
   margin-left: 8px;
 }
 @media only screen and (min-width: 992px) {
@@ -464,48 +468,84 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
     margin: 64px auto;
   }
 }
-.index .card {
+
+.card {
   border: none;
   background: none;
   border-radius: 0;
 }
-.index .card img {
+.card img {
   height: 216px;
   border-radius: 0;
 }
-.index .card .card-body {
+.card .card-body {
   text-align: center;
 }
-.index .card .card-body p, .index .card .card-body strong {
+.card .card-body p, .card .card-body strong {
   margin: 0;
 }
-.index .card .card-body strong {
+.card .card-body strong {
   font-size: 18px;
 }
-.index .card .card-body p {
+.card .card-body p {
   margin-top: 4px;
   font-size: 24px;
 }
-.index .card .card-body button {
+.card .card-body button {
   transition: all 0.3s;
 }
-.index .card .card-body button:hover a {
+.card .card-body button:hover a {
   color: white;
 }
-.index .card .card-body button a {
+.card .card-body button a {
   color: #5b5b5b;
 }
-.index .card .card-body button a i {
+.card .card-body button a i {
   margin-right: 4px;
 }
 @media only screen and (max-width: 744px) {
-  .index .card .card-body button a .boton-comprar-xs {
+  .card .card-body button a .boton-comprar-xs {
     display: inline;
   }
 }
 @media only screen and (max-width: 744px) {
-  .index .card .card-body button a span {
+  .card .card-body button a span {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #inicio {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "presentacion presentacion presentacion presentacion" "personalizable personalizable masvendido masvendido" "producto producto producto producto" "filamento filamento filamento filamento" "servicio servicio servicio servicio";
+    justify-items: center;
+    align-items: flex-start;
+  }
+  #inicio .presentacion-inicial {
+    grid-area: presentacion;
+  }
+  #inicio .primera-vista-personalizables {
+    grid-area: personalizable;
+    width: 60%;
+    margin-left: 156px;
+    margin-right: auto;
+  }
+  #inicio .MasVendidos {
+    grid-area: masvendido;
+    width: 70%;
+    margin-right: 256px;
+    margin-left: auto;
+  }
+  #inicio .productos {
+    grid-area: producto;
+  }
+  #inicio .presentacion-filamento {
+    grid-area: filamento;
+  }
+  #inicio section:last-child {
+    grid-area: servicio;
   }
 }
 
@@ -518,17 +558,6 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin: 16px 8px;
 }
 
-@media only screen and (min-width: 992px) {
-  .MasVendidos, .primera-vista-personalizables {
-    display: inline-block;
-    width: 30%;
-    height: 400px;
-    margin: 0 132px 32px 132px;
-  }
-  .MasVendidos {
-    padding-top: 100px;
-  }
-}
 .productos > div {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -538,10 +567,9 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
 }
 @media only screen and (min-width: 992px) {
   .productos > div {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    width: 85%;
+    width: 90%;
     margin: 32px auto;
   }
 }
@@ -571,7 +599,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -579,24 +607,46 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
 
+/* Works on Firefox */
+@media only screen and (min-width: 992px) {
+  .scrolleable-cards, .scrolleable-personalizables {
+    scrollbar-width: 4px;
+    scrollbar-color: transparent;
+  }
+  .scrolleable-cards, .scrolleable-personalizables::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrolleable-cards, .scrolleable-personalizables::-webkit-scrollbar-track {
+    background: rgb(244, 244, 244);
+  }
+  .scrolleable-cards, .scrolleable-personalizables::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    max-width: 4px;
+    border-radius: 4px;
+    border-color: transparent;
+  }
+}
 .scrolleable-cards {
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
-  padding: 24px;
-  width: 300px;
   border-radius: 8px;
+  padding: 24px;
   gap: 12px;
+  padding: 24px;
+  margin: 32px auto;
+  min-width: 300px;
+  max-width: 900px;
 }
 .scrolleable-cards > div {
   flex: 0 0 100%;
@@ -609,10 +659,15 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    overflow-x: visible;
+    visibility: visible;
     scroll-snap-type: none;
-    width: 85%;
-    margin: 32px auto;
+    overflow-x: visible;
+    scroll-padding: 0;
+    width: auto;
+    background-color: transparent;
+  }
+  .scrolleable-cards > .card {
+    scroll-snap-align: inherit;
   }
 }
 .scrolleable-cards .caracteristicas-servicio {
@@ -625,6 +680,28 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
 #caracter-service {
   grid-template-columns: repeat(3, 1fr);
   margin: 32px auto;
+}
+
+.scrolleable-personalizables {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: proximity;
+  scroll-padding: 24px;
+  border-radius: 8px;
+  padding: 24px;
+  gap: 12px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 1000px;
+}
+.scrolleable-personalizables > div {
+  flex: 0 0 100%;
+  padding: 24px 16px 24px 72px;
+  border-radius: 4px;
+  scroll-snap-align: center;
+}
+.scrolleable-personalizables > div {
+  max-width: 308px;
 }
 
 .carta-producto-precompra article .indentidad, .datos-compra .compra-final .carta-compra div, .productos > div {
@@ -643,7 +720,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -651,11 +728,11 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -772,7 +849,7 @@ footer div ul .redes-sociales a svg {
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -780,11 +857,11 @@ footer div ul .redes-sociales a svg {
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -800,7 +877,7 @@ header img {
   margin: 72px auto 32px auto;
 }
 .datos-compra nav {
-  display: inline-block;
+  display: block;
   margin: 12px 24px;
 }
 .datos-compra nav a, .datos-compra nav p {
@@ -856,6 +933,11 @@ header img {
   display: inline-block;
   text-align: center;
 }
+@media only screen and (min-width: 992px) {
+  .formulario {
+    max-width: 600px;
+  }
+}
 .formulario div {
   display: inline-block;
   text-align: start;
@@ -879,6 +961,7 @@ header img {
 }
 .formulario div textarea {
   height: 325px;
+  resize: none;
 }
 .formulario .datos-vivienda {
   margin-left: 4px;
@@ -962,7 +1045,7 @@ header img {
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -970,11 +1053,11 @@ header img {
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -989,9 +1072,13 @@ header img {
 }
 @media only screen and (min-width: 992px) {
   .drop-down {
+    display: inline-block;
+    margin: 12px 0px;
     position: sticky;
+    left: 32px;
     top: 300px;
-    bottom: 700px;
+    bottom: 200px;
+    margin-left: 64px;
   }
 }
 
@@ -1010,6 +1097,11 @@ header img {
   cursor: pointer;
   transition: 0.3s;
 }
+@media only screen and (min-width: 992px) {
+  .drop-down .text-select {
+    display: none;
+  }
+}
 
 .drop-down .text-select:hover {
   background-color: rgba(255, 255, 255, 0.3);
@@ -1022,6 +1114,11 @@ header img {
 .drop-down .menu-select {
   width: 250px;
   user-select: none;
+}
+@media only screen and (min-width: 992px) {
+  .drop-down .menu-select {
+    width: 300px;
+  }
 }
 
 .drop-down .menu-select ul {
@@ -1053,6 +1150,7 @@ header img {
 @media only screen and (min-width: 992px) {
   .drop-down .hide {
     display: flex;
+    flex-direction: column;
   }
 }
 
@@ -1063,14 +1161,51 @@ header img {
   transition: 0.3s;
   border-radius: 4px;
 }
+.drop-down .menu-select li:first-child {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .drop-down .menu-select li:first-child {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
 
 .drop-down .menu-select li:hover {
-  background-color: #000;
+  background-color: #d9d9d9;
+}
+
+.datos-compra .contact {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1fr 6fr;
+  grid-template-areas: "navC navC" "linkC formC";
+  align-items: flex-start;
+}
+.datos-compra .contact nav {
+  grid-area: navC;
+}
+.datos-compra .contact nav a:first-child {
+  margin-left: 126px;
+}
+.datos-compra .contact article {
+  grid-area: linkC;
+}
+.datos-compra .contact form {
+  grid-area: formC;
+  margin-left: 64px;
+}
+
+.nav-contacto {
+  display: inline-block;
+  margin: 0 100px auto auto;
+  text-align: start;
 }
 
 @media only screen and (min-width: 992px) {
-  #stock .productos {
-    margin-left: 300px;
+  .principal {
+    width: 70%;
+    margin: 32px auto 32px 360px;
   }
 }
 
@@ -1090,7 +1225,7 @@ header img {
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -1098,11 +1233,11 @@ header img {
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
@@ -1121,12 +1256,48 @@ header img {
 .pre-compra .carta-producto-precompra {
   text-align: center;
 }
+@media only screen and (min-width: 992px) {
+  .pre-compra .carta-producto-precompra {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 .pre-compra .carta-producto-precompra img {
   display: inline-block;
   width: 90%;
 }
+@media only screen and (min-width: 992px) {
+  .pre-compra .carta-producto-precompra img {
+    width: 30%;
+    margin: 0 24px 0 auto;
+  }
+}
 .pre-compra .carta-producto-precompra div {
   text-align: start;
+}
+@media only screen and (min-width: 992px) {
+  .pre-compra .carta-producto-precompra article {
+    width: 30%;
+    margin: 0 auto 0 24px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .pre-compra .CaracteristicasProductoPreCompra {
+    margin: 128px 64px;
+  }
+  .pre-compra .CaracteristicasProductoPreCompra hr {
+    display: none;
+  }
+  .pre-compra .CaracteristicasProductoPreCompra h2 {
+    width: 40%;
+    margin-left: 32px;
+    margin-right: auto;
+  }
+  .pre-compra .CaracteristicasProductoPreCompra ul {
+    width: 40%;
+    margin-left: 128px;
+  }
 }
 
 .carta-producto-precompra article .indentidad, .productos > div, .datos-compra .compra-final .carta-compra div {
@@ -1145,7 +1316,7 @@ header img {
   flex-direction: row;
 }
 
-.index .card .card-body button {
+.card .card-body button {
   background-color: transparent;
   border: 1px solid #0f0f0f;
   border-radius: 32px;
@@ -1153,11 +1324,11 @@ header img {
   margin: 8px 0;
   transition: all 0.3s;
 }
-.index .card .card-body button:hover {
+.card .card-body button:hover {
   background-color: #00cdac;
   border-color: white;
 }
-.index .card .card-body button:active {
+.card .card-body button:active {
   background-color: #01ffd6;
   border-color: white;
 }
