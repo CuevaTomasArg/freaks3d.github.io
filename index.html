@@ -18,7 +18,7 @@
     <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
             <button class="cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                <i class="bi bi-cart3" id="contadorCarrito">0</i>
+                <i class="bi bi-cart3" id="contadorCarrito"></i>
             </button>
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
               <div class="offcanvas-header">
@@ -35,10 +35,10 @@
                 <p>$<span id="precioTotal">0</span></p>
               </div>
               <div class="volver">
-                <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border: none;">
                     Iniciar compra
                 </button>
-                <a class="seguir-viendo" href="#">Ver más productos</a>
+                <a class="seguir-viendo" href="#" style="margin:4px auto 12px auto ;">Ver más productos</a>
               </div>
             </div>
           <a class="navbar-brand" href="index.html"><img src="multimedia/logos/logo_general.png" alt=""></a>
@@ -59,18 +59,6 @@
                   <a class="nav-link" href="pages/productos.html">
                     Productos
                   </a>
-                  <button type="buton" style="background: none; border:none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-chevron-down"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="categorias/SetMateros.html">Set de mates</a></li>
-                    <li><a class="dropdown-item" href="categorias/mates.html">Mates</a></li>
-                    <li><a class="dropdown-item" href="categorias/SetEsponjas.html">Set de esponjas</a></li>
-                    <li><a class="dropdown-item" href="categorias/Figuras.html">Figuras</a></li>
-                    <li><a class="dropdown-item" href="categorias/Macetas.html">masetas</a></li>
-                    <li><a class="dropdown-item" href="categorias/Tazas.html">Tazas</a></li>
-                    <li><a class="dropdown-item" href="categorias/Lamparas.html">Lamparas</a></li>
-                  </ul>
                 </li>
                 <li class="d-flex nav-item">
                     <a class="nav-link" href="pages/personalizables.html">Impresiones personalizables</a>
@@ -88,23 +76,19 @@
       </nav>
 </header>
     <main class="index" id="inicio">
-        <section class="presentacion-inicial">
+        <section class="presentacion-inicial" >
+            <img src="multimedia/logos/logo_general.png" alt="">
             <h2>
                 Envios a todo el pais
             </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni recusandae dolor blanditiis ducimus veritatis ea nihil 
-                distinctio corrupti adipisci sed culpa, laboriosam, 
-                necessitatibus, exercitationem fugit placeat quam. Ipsum, numquam ex!
-            </p>
+            <strong style="font-size:1.2rem ;">
+                Despachamos nuestros productos a travez de correo argentino
+            </strong>
         </section>
         <section class="primera-vista-personalizables">
             <h2>
                 Personalizables
             </h2>
-            <p>
-              Dejá tus recuerdos y tu escencia en una presentación única
-            </p>
             <div href="pages/personalizables.html"id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 <a href="pages/personalizables.html" class="carousel-inner">
                   <div class="carousel-item active">
@@ -155,45 +139,52 @@
                 <!-- CONTENIDO -->
             </div>
             <nav class="CTA-verMas">
+              <a href="pages/productos.html">  
                 <button type="button">
-                    <a href="pages/productos.html">Ver todos los productos</a> 
+                    Ver todos los productos 
                 </button>
+              </a>
             </nav>
         </section>
-        <section class="presentacion-filamento">
+        <section class="presentacion-filamento" style="text-align: center;">
             <h2>
                 Filamento
             </h2>
-            <div class="scrolleable-cards" id="presentacionFilamento">
+            <p style="font-size:1.2rem">
+              Tenemos filamento Grilon3 y 3n3.
+            </p>
+            <div class="scrolleable-personalizables" id="presentacionFilamento">
               <!-- CONTENIDO -->
             </div>
             <nav class="CTA-verMas">
-              <button >
-                  Ver todos los productos
-              </button>
+              <a href="pages/Filamento.html">
+                <button href="pages/Filamento.html" type="button">
+                    Ver mas opciones de Filamento 
+                </button>
+              </a>
           </nav>
         </section>
-            <section class="scrolleable-cards serviceSkills" id="caracter-service">
+            <!-- <section class="scrolleable-personalizables" id="caracter-service">
                     <div class="card caracteristicas-servicio" >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" style="margin:12px auto ;" width="54" height="54" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
                         <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                       </svg>
-                      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>Nuestras entregas se realizan a travez de correo argentino.</p>
                     </div>                  
                     <div class="card caracteristicas-servicio" >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" style="margin:12px auto ;" width="54" height="54" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
                         <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
                         <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
                       </svg>
-                      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>Aceptamos cualquier pago por traseferencia.</p>
                     </div>                  
                     <div class="card caracteristicas-servicio" >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" style="margin:12px auto ;" width="54" height="54" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
                         <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
                       </svg>
-                      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>Lo enviamos....</p>
                     </div>                  
-            </section>
+            </section> -->
         <section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin: 0;">
           <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
             <div class="modal-content">
@@ -201,29 +192,20 @@
                 <img src="../multimedia/logos/logo_general.png"class="modal-title" id="exampleModalLabel">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form class="modal-body datos-compra" action="../php/compra.php" method="post">
+              <form class="modal-body datos-compra" action="php/compra.php" method="post">
                   <div>
                     <div class="compra-final" id="cartaPreFormularioFinal">
-                      <!--/CONTENIDO/--> 
-                      <!-- <div class="carta-compra">
-                            <img src="../multimedia/fotos/filamentos/3n3-petg-azul-11-87fd1bebfcd55e8ed616357828055893-640-0.jpg" alt="">
-                            <div>
-                                <strong>Producto</strong>
-                                <p class="caracter">Caracter</p>
-                                <p class="cant">x N</p>
-                                <p class="monto">$XXXX,XX</p>
-                            </div>
-                            <hr>
-                        </div> -->
+                      <!--/CONTENIDO DEL CARRITO/--> 
                     </div>
                     <div class="carta-envio">
                         <strong>Envio</strong>
-                        <p>$XXXX,XX</p>
-                        <hr> 
+                        <p id="montoDelDestino"></p>
+                        <hr>
+                        <input id="resultadoSelect" readonly onmousedownn="return false;" name="destinoDeProvincia" type="hidden">
                     </div>
                     <div class="monto-total">
                          <strong>Total</strong>
-                        <p>$XXXX,XX</p>
+                        <p>$ <span id="precioTotalForm"></span> </p>
                         <hr> 
                     </div>
                   </div>
@@ -245,47 +227,15 @@
                       <h2>Información de la entrega</h2>
                       <div class="datos-vivienda">
                           <div class="calle">
-                              <label for="">Calle</label>
+                              <label for="street">Domicilio</label>
                               <input type="text" name="street">
-                          </div>
-                          <div class="altura">
-                              <label for="">Altura</label>
-                              <input type="text" name="num">
                           </div>
                           <div class="dpto">
                               <label for="">Depto</label>
                               <input type="text" name="dpto">
                           </div>
                       </div>
-                      <div> <!-- Hacer que dentro de este campo se genere donde es el pais de la persona para confirmar de donde es-->
-                          <label for="provincia-destino">Provincia</label>
-                          <!-- <select name="provincia-destino">
-                              <option value="Buenos Aires">Buenos Aires</option>
-                              <option value="CABA - Ciudad Autonoma de Buenos Aires">CABA - Ciudad Autonoma de Buenos Aires</option>
-                              <option value="Catamarca">Catamarca</option>
-                              <option value="Chaco">Chaco</option>
-                              <option value="Chubut">Chubut</option>
-                              <option value="Córdoba">Córdoba</option>
-                              <option value="Corrientes">Corrientes</option>
-                              <option value="Entre Ríos">Entre Ríos</option>
-                              <option value="Formoza">Formoza</option>
-                              <option value="Jujuy">Jujuy</option>
-                              <option value="La Pampa">La Pampa</option>
-                              <option value="La Rioja">La Rioja</option>
-                              <option value="Mendoza">Mendoza</option>
-                              <option value="Misiones">Misiones</option>
-                              <option value="Neuquen">Neuquen</option>
-                              <option value="Río Negro">Río Negro</option>
-                              <option value="Salta">Salta</option>
-                              <option value="San Juan">San Juan</option>
-                              <option value="San Luis">San Luis</option>
-                              <option value="Santa Cruz">Santa Cruz</option>
-                              <option value="Santa Fe">Santa Fe</option>
-                              <option value="Santiago del Estero">Santiago del Estero</option>
-                              <option value="Tierra del Fuego, Antártida a islas del Atlántico Sur">Tierra del Fuego, Antártida a islas del Atlántico Sur</option>
-                              <option value="Tucumán">Tucumán</option>
-                            </select> -->
-                      </div>
+                           <input type="hidden" name="prov">
                       <div>
                           <label for="">Localidad</label>
                           <input type="text" name="localidad">
@@ -322,11 +272,14 @@
                               <input type="text" name="transaccion">
                           </div>
                       </div>
-                      <button type="submit">
+                      <div id="dataEnviar">
+                        <!--AQUI DENTRO VA LA INFORMACION DE LOS PRODUCTOS ELEGIDOS DENTRO DEL CARRITO GENERADA EN APP.JS-->
+                      </div>
+                      <button onclick="ejecutarCompra()" id="ejecutarCompra" type="submit" >
                           Comprar
                       </button>
                   </div>
-              </div>
+              </form>
             </div>
           </form>
           </div>
@@ -351,7 +304,7 @@
             </ul>
         </div>
         <div>
-            <strong><a href="pages/contacto.html">Contactos</a></strong>
+            <strong>Contactos</strong>
             <ul>
                 <li><a href="tel:+5491141742316" >Telefono</a></li>
                 <li><a href="mailto:cuevatomass02@gmail.com">gmail</a></li>

@@ -1,11 +1,8 @@
 
 //Funcion para que quede guardado el carrito
-// document.addEventListener('DOMContentLoaded', () => {
-//     if (localStorage.getItem('carrito')){
-//         carrito = JSON.parse(localStorage.getItem('carrito'))
-//         actualizarCarrito()
-//     }
-// })
+
+//creo el carrito
+let carrito = []
 
 const agregarAlCarrito = (prodId) => {
     //Algoritmo para no repetir elementos en al array
@@ -34,7 +31,6 @@ const agregarAlCarrito = (prodId) => {
                 }
         
     
-    console.log(carrito)
     compraTotal = carrito
 
 }
@@ -49,32 +45,48 @@ const eliminarDelCarrito = (prodId) => {
     carrito.splice(indice,1)
     actualizarCarrito()
 };
+const aumentarCant = (prodId) =>{
+    const item = carrito.find((prod)=> prod.id === prodId)
+    const indice = carrito.indexOf(item)
+    carrito[indice].cantidad ++
+    actualizarCarrito()
+}
+const disminuirCant = (prodId) =>{
+    const item = carrito.find((prod)=> prod.id === prodId)
+    const indice = carrito.indexOf(item)
+    if(carrito[indice].cantidad > 1){
+        carrito[indice].cantidad --
+        actualizarCarrito()
+    }
+}
 
 const actualizarFormularioCompra = () => {
     contenedorCardsComrpa.innerHTML = ""
-    var num = 0
+    var productos = ''
+    const dataEnviar = document.getElementById('dataEnviar')
     carrito.forEach((prod)=>{
         const divBuy = document.createElement('div')
         divBuy.className = ("carta-compra")
         divBuy.innerHTML = `
         <img src="${prod.img}" alt="${prod.desc}">
-        <div>
-            <input readonly onmousedownn="return false;" name="nomProd${num}" type="hidden" value="${prod.nombre}" >    
+        <div>    
             <strong class="nomProducto">${prod.nombre}</strong>
-            <input readonly onmousedownn="return false;" name="cantProd${num}" type="hidden" value="${prod.cantidad}" >
             <p class="cant">x ${prod.cantidad}</p>
-            <input readonly onmousedownn="return false;" name="priceProd${num}" type="hidden" value="${prod.precio * prod.cantidad}" >
             <p class="monto">$${prod.precio * prod.cantidad}</p>
         </div>
         <hr>
         `
         contenedorCardsComrpa.appendChild(divBuy)
-        num ++
+        productos += `Producto: ${prod.nombre}, Cantidad: ${prod.cantidad} || `
     })
+    dataEnviar.innerHTML=`
+    <input readonly onmousedownn="return false;" name="productos" type="hidden" value="${productos}">
+    `
 }
 
 //Funcion para crear las cositas en el carrito
 const actualizarCarrito = ()=> {
+    console.log(carrito)
     contenedorCarrito.innerHTML = ""
     carrito.forEach((prod) => {
         const div = document.createElement('div')
@@ -86,7 +98,15 @@ const actualizarCarrito = ()=> {
             <i class="bi bi-trash3"></i>
         </button>
         <label for="Cant" id="cantidad">Cantidad</label>
-        <input readonly onmousedownn="return false;" name="Cant" type="number" value="${prod.cantidad}" >
+        <div class="CantidadDeProd">
+            <input readonly onmousedownn="return false;" name="Cant" type="number" value="${prod.cantidad}" >
+            <button class="aum" onclick="aumentarCant(${prod.id})">
+                <i class="bi bi-chevron-up"></i>
+            <button>
+            <button class="dis" onclick="disminuirCant(${prod.id})">
+                <i class="bi bi-chevron-down"></i>
+            <button>
+        </div>
         <p class="price">${prod.precio * prod.cantidad}</p>
         <hr>
         `
@@ -98,6 +118,7 @@ const actualizarCarrito = ()=> {
     contadorCarrito.innerText = carrito.length
     var montoCarrito = carrito.reduce((acc,prod) => acc + (prod.precio * prod.cantidad),0)
     precioTotal.innerText = montoCarrito + montoDestino
+    precioTotalForm.innerText =montoCarrito + montoDestino
     if (carrito.length != 0){
         HayProducto = true
         if (existeDestino){
@@ -108,6 +129,7 @@ const actualizarCarrito = ()=> {
         HayProducto = false
         seleccionarDestino()
         existeDestino = true
+        contadorCarrito.innerText = ''
     }
 }; 
 
@@ -120,8 +142,10 @@ const seleccionarDestino = () =>{
         const montoDest = document.createElement('p')
         title.innerText = 'Provincia'
         title.setAttribute('id','destinoProvincia')
+        title.setAttribute('style',"margin-rigth:12px")
         select.setAttribute('id','seleccionDestino')
         select.setAttribute('name','provincia-destino')
+        select.setAttribute('style',"margin-left:12px;")
         montoDest.setAttribute('id','montoDestino$')
         formularioProv.appendChild(title)
         formularioProv.appendChild(select)
@@ -129,15 +153,21 @@ const seleccionarDestino = () =>{
         destino.forEach((dest) => {
             const option = document.createElement('option')
             option.setAttribute('value',`${dest.monto}`)
+            option.setAttribute('id',`${dest.provincia}`)
             option.innerText = `${dest.provincia}`
             select.appendChild(option)
         })
         const selectElement = document.getElementById('seleccionDestino')
         selectElement.addEventListener('change', (event) => {
             const resultado = document.getElementById('montoDestino$')
-            resultado.innerText = `Monto de entrega: ${event.target.value}`
+            resultado.setAttribute('style',"margin:12px")
+            resultado.innerText = `Monto de entrega: $${event.target.value}`
+            montoDelDestino.innerText = event.target.value
+            //----------------------
             montoDestino = parseInt(event.target.value,10)
+            resultadoSelect.setAttribute('value',selectElement.options[selectElement.selectedIndex].text)
             actualizarCarrito()
+
         })
     }else{
         document.getElementById('destinoProvincia').remove()
@@ -146,3 +176,11 @@ const seleccionarDestino = () =>{
         montoDestino = 0
     }
 };
+
+
+const ejecutarCompra = () =>{
+    console.log("El carrito tiene", carrito.length, "elementos")
+    carrito = []
+    console.log("elimine el carrito madafucer")
+    actualizarCarrito()
+}

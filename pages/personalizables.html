@@ -19,7 +19,7 @@
     <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
             <button class="cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                <i class="bi bi-cart3" id="contadorCarrito">0</i>
+                <i class="bi bi-cart3" id="contadorCarrito"></i>
             </button>
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
               <div class="offcanvas-header">
@@ -60,7 +60,7 @@
                   <a class="nav-link" href="productos.html">
                     Productos
                   </a>
-                  <button type="buton" style="background: none; border:none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <!-- <button type="buton" style="background: none; border:none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-chevron-down"></i>
                   </button>
                   <ul class="dropdown-menu">
@@ -71,7 +71,7 @@
                     <li><a class="dropdown-item" href="categorias/Macetas.html">masetas</a></li>
                     <li><a class="dropdown-item" href="categorias/Tazas.html">Tazas</a></li>
                     <li><a class="dropdown-item" href="categorias/Lamparas.html">Lamparas</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
                 <li class="d-flex nav-item">
                     <a class="nav-link" href="personalizables.html">Impresiones personalizables</a>
@@ -97,21 +97,21 @@
           <h2>¿Como puede tener mi producto personalizado?</h2>
           <ol>
               <li><p>Agrega uno de nuestros productos personalizables al carrito (como cualquier producto).</p></li>
-              <li><p>En el formulario de compra, agrega una foto o referencia de como queres que se vea tu producto.</p></li>
-              <li><p>Finalizas la compra y listo, dentro de los proximos dias recibiras un mensaje mostrandote el diseño del producto para que veas como va a quedar antes de la impresión y quede exactamente como lo querías</p></li>
+              <li>
+                <p>
+                  Llenas el formulario y finalizas la compra, luego de que te llegue la
+                   confirmación de la compra por mail, adjunta la foto de como queres que se vea.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Te hiremos mostrando el diseño para que veas como va aquedar tu producto y te 
+                  lo enviamos.
+                </p>
+              </li>
           </ol>
       </section>
         <section class="vista-personalizables">
-            <h2>Algunas impresiones de clientes</h2>
-            <p>Para que veas que somos capaces de hacerte un producto a medida y completamente a tu gusto, te dejamos
-              algunos ejemplos de clientes que nos recomiendan.
-            </p>
-             <div class="scrolleable-personalizables">
-            <!--CONTENIDO PARA MOSTRAR A NUESTROS CLIENTES QUE HICIERON NUESTOS CLIENTES  -->
-            </div> 
-        </section>
-        <section class="vista-personalizables">
-            <h2>Nuestros productos personalizables</h2>
             <article class="drop-down">
                 <div class="text-select">
                     <span>Personalizables</span>
@@ -127,21 +127,19 @@
             </article>
             <div>
                 <h3>Lunas</h3>
-                <p>Ilumina tus espacios con fotos personalizables, tematicas y colores de tu preferencia</p>
+                <p style="font-size:1.3rem ;font-weight: 500;">Ponele la foto que quieras</p>
                 <div class="scrolleable-personalizables" id="LunasPersonalizables">
                   <!--CONTENIDO-->
                 </div>
             </div>
             <div>
                 <h3>Llaveros</h3>
-                <p>Ilumina tus espacios con fotos personalizables, tematicas y colores de tu preferencia</p>
+                <p style="font-size:1.3rem ;font-weight: 500;">Llevalo a todos lados</p>
                 <div class="scrolleable-personalizables" id="LlaverosPersonalizables">
                   <!--CONTENIDO-->
                 </div>
             </div>
             <div>
-                <h3>Mates</h3>
-                <p>Ilumina tus espacios con fotos personalizables, tematicas y colores de tu preferencia</p>
                 <div class="scrolleable-personalizables" id="MatesPersonalizables">
                   <!--CONTENIDO-->
                 </div>
@@ -154,33 +152,24 @@
                 <img src="../multimedia/logos/logo_general.png"class="modal-title" id="exampleModalLabel">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <section class="modal-body datos-compra">
+              <form class="modal-body datos-compra" action="php/compra.php" method="post">
                   <div>
                     <div class="compra-final" id="cartaPreFormularioFinal">
-                      <!--/CONTENIDO/--> 
-                      <!-- <div class="carta-compra">
-                            <img src="../multimedia/fotos/filamentos/3n3-petg-azul-11-87fd1bebfcd55e8ed616357828055893-640-0.jpg" alt="">
-                            <div>
-                                <strong>Producto</strong>
-                                <p class="caracter">Caracter</p>
-                                <p class="cant">x N</p>
-                                <p class="monto">$XXXX,XX</p>
-                            </div>
-                            <hr>
-                        </div> -->
+                      <!--/CONTENIDO DEL CARRITO/--> 
                     </div>
                     <div class="carta-envio">
                         <strong>Envio</strong>
-                        <p>$XXXX,XX</p>
-                        <hr> 
+                        <p id="montoDelDestino"></p>
+                        <hr>
+                        <input id="resultadoSelect" readonly onmousedownn="return false;" name="destinoDeProvincia" type="hidden">
                     </div>
                     <div class="monto-total">
                          <strong>Total</strong>
-                        <p>$XXXX,XX</p>
+                        <p>$ <span id="precioTotalForm"></span> </p>
                         <hr> 
                     </div>
                   </div>
-                  <form class="formulario" action="../php/compra.php" method="post">
+                  <div class="formulario">
                     <h1>Formulario de envío</h1>  
                     <h2>Datos de contacto</h2>
                       <div>
@@ -192,59 +181,27 @@
                           <input type="email" name="email">
                       </div>
                       <div>
-                          <label for="">Celular</label>
+                          <label for="celular">Celular</label>
                           <input type="text" name="celular">
                       </div>
                       <h2>Información de la entrega</h2>
                       <div class="datos-vivienda">
                           <div class="calle">
-                              <label for="">Calle</label>
+                              <label for="street">Domicilio</label>
                               <input type="text" name="street">
                           </div>
-                          <div class="altura">
-                              <label for="">Altura</label>
-                              <input type="text" name="num">
-                          </div>
                           <div class="dpto">
-                              <label for="">Depto</label>
+                              <label for="dpto">Depto</label>
                               <input type="text" name="dpto">
                           </div>
                       </div>
-                      <div> <!-- Hacer que dentro de este campo se genere donde es el pais de la persona para confirmar de donde es-->
-                          <label for="provincia-destino">Provincia</label>
-                          <!-- <select name="provincia-destino">
-                              <option value="Buenos Aires">Buenos Aires</option>
-                              <option value="CABA - Ciudad Autonoma de Buenos Aires">CABA - Ciudad Autonoma de Buenos Aires</option>
-                              <option value="Catamarca">Catamarca</option>
-                              <option value="Chaco">Chaco</option>
-                              <option value="Chubut">Chubut</option>
-                              <option value="Córdoba">Córdoba</option>
-                              <option value="Corrientes">Corrientes</option>
-                              <option value="Entre Ríos">Entre Ríos</option>
-                              <option value="Formoza">Formoza</option>
-                              <option value="Jujuy">Jujuy</option>
-                              <option value="La Pampa">La Pampa</option>
-                              <option value="La Rioja">La Rioja</option>
-                              <option value="Mendoza">Mendoza</option>
-                              <option value="Misiones">Misiones</option>
-                              <option value="Neuquen">Neuquen</option>
-                              <option value="Río Negro">Río Negro</option>
-                              <option value="Salta">Salta</option>
-                              <option value="San Juan">San Juan</option>
-                              <option value="San Luis">San Luis</option>
-                              <option value="Santa Cruz">Santa Cruz</option>
-                              <option value="Santa Fe">Santa Fe</option>
-                              <option value="Santiago del Estero">Santiago del Estero</option>
-                              <option value="Tierra del Fuego, Antártida a islas del Atlántico Sur">Tierra del Fuego, Antártida a islas del Atlántico Sur</option>
-                              <option value="Tucumán">Tucumán</option>
-                            </select> -->
-                      </div>
+                           <input type="hidden" name="prov">
                       <div>
-                          <label for="">Localidad</label>
+                          <label for="localidad">Localidad</label>
                           <input type="text" name="localidad">
                       </div>
                       <div>
-                          <label for="">Cod. Postal</label>
+                          <label for="codP">Cod. Postal</label>
                           <input type="text" name="CodP">
                       </div>
                       <div>
@@ -275,13 +232,16 @@
                               <input type="text" name="transaccion">
                           </div>
                       </div>
-                      <button type="submit">
+                      <div id="dataEnviar">
+                        <!--AQUI DENTRO VA LA INFORMACION DE LOS PRODUCTOS ELEGIDOS DENTRO DEL CARRITO GENERADA EN APP.JS-->
+                      </div>
+                      <button onclick="ejecutarCompra()" id="ejecutarCompra" type="submit" >
                           Comprar
                       </button>
-                  </form>
-              </div>
+                  </div>
+              </form>
             </div>
-            </section>
+          </form>
           </div>
         </section>
     </main>
@@ -304,7 +264,7 @@
             </ul>
         </div>
         <div>
-            <strong><a href="contacto.html">Contactos</a></strong>
+            <strong>Contacto</strong>
             <ul>
                 <li><a href="tel:+5491141742316" >Telefono</a></li>
                 <li><a href="mailto:cuevatomass02@gmail.com">gmail</a></li>
