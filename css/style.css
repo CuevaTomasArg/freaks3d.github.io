@@ -575,6 +575,13 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   }
 }
 
+#inicio .presentacion-inicial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 @media only screen and (min-width: 992px) {
   #inicio {
     display: grid;
@@ -586,9 +593,7 @@ header .container-fluid .offcanvas-body .dropdown a, header .container-fluid .of
   }
   #inicio .presentacion-inicial {
     grid-area: presentacion;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    
   }
   #inicio .presentacion-inicial img {
     width: 94px;
@@ -1344,7 +1349,8 @@ header img {
   .modal-compra, .modal-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     border: none;
     padding: 0;
     margin: 0;
@@ -1352,7 +1358,7 @@ header img {
   }
   .modal-compra > img, .modal-header > img {
     width: 128px;
-    margin: 2px auto 2px 650px;
+    margin: 2px auto 2px 64px; 
   }
   .modal-compra > .btn-close, .modal-header > .btn-close {
     display: inline-block;
