@@ -7,38 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// //Todo esto es para leer el json que tengo de stock
-// document.addEventListener('DOMContentLoaded',()=>{
-//     fetchData()
-// } )
-
-// //let stockProductos = []
-// let stockPresentacion = []
-// //let stockPersonalizables = []
-// //let stockFilamento = []
-
-// const fetchData = async() =>{
-//     try{
-//         //const pro = await fetch("../json/stock.json")
-//         const pre = await fetch("../json/stockIndex.json")
-//         //const per = await fetch("../json/stockP.json")
-//         //const fil = await fetch("../json/stockF.json")
-        
-//         //stockProductos = await pro.json()
-//         stockPresentacion = await pre.json()
-//         //stockPersonalizables = await per.json()
-//         //stockFilamento = await fil.json()
-//         //console.log(stockProductos)
-//         console.log(stockPresentacion)
-//         //console.log(stockPersonalizables)
-//         //console.log(stockFilamento)
-//     } catch(error){
-//         console.log(error)
-//     }
-// }
-
-
-
 //Funcion para ordenar los arrays para poder agregarlos desordenadamente sin problema
 function ordenar_por_insercion(Arr,dimL){
     var actual = null
@@ -132,22 +100,22 @@ let stockFilamento = [
 ]
 
 let stockPresentacion = [
-    {id:3001,nombre:"Galletero Stich",tipo:"masVendido",numtipo:"100",desc:"Galletero impreso en 3D Stich",precio:1600,cantidad:1,img:"../multimedia/fotos/masVendidos/CarameleraStich.jpg"},
-    {id:3,nombre:"Mate Copa del mundo",tipo:"masVendido",numtipo:"100",desc:"Filamento para impresora 3D",precio:1600,cantidad:1,img:"../multimedia/fotos/masVendidos/MateCopaDelMundo.jpg"},
-    {id:3003,nombre:"Set esponjas Stich",tipo:"presentacion",numTipo:1000,cantidad:1,desc:"Set espojas de stich",precio:6000,personaje:"Stich",img:"../multimedia/fotos/productos/SetEsponjasStich.jpg"},
-    {id:6,nombre:"Mate Spiderman",tipo:"presentacion",numTipo:1,cantidad:1,desc:"Mate cabeza de spiderman",precio:1600,personaje:"Spiderman",img:"../multimedia/fotos/productos/spiderman.jpg"},
-    {id:3005,nombre:"Soporte Joystick mano",tipo:"presentacion",numTipo:2,cantidad:1,desc:"Soporte para celular o joystick en forma de mano impresa en 3D",precio:1200,personaje:"Mano ",img:"../multimedia/fotos/productos/soporte-joystick-mano.jpg"},
-    {id:3006,nombre:"Roberto Plant",tipo:"presentacion",numTipo:5,cantidad:1,desc:"Maceta Roberto Plant rosa impresa en 3D",precio:1200,personaje:"Roberto Plant",img:"../multimedia/fotos/productos/RobertPlant.jpg"},
-    {id:3007,nombre:"Homero Simpson",tipo:"presentacion",numTipo:4,cantidad:1,desc:"Porta esponjas Homero Simpson impresa en 3D",precio:1200,personaje:"Homero Simpson",img:"../multimedia/fotos/productos/PortaEsponjasHomeroSimpson.jpg"},
-    {id:3008,nombre:"Lampara Harry Potter",tipo:"presentacion",numTipo:7,cantidad:1,desc:"Lampara luna impresa en 3D",precio:1200,personaje:"Harrry Potter",img:"../multimedia/fotos/productos/LunaConGorrito.jpg"},
-    {id:2009,nombre:"Blanco",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Blanco",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/Blanco.jpg"},
-    {id:2010,nombre:"Bronce",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Bronce",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/Bronce.jpg"},
-    {id:2011,nombre:"Caribe",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Caribe",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/Caribe.jpg"},
-    {id:2012,nombre:"Chocolate",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Chocolate",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/Chocolate.jpg"},
-    {id:2002,nombre:"Gris",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Gris",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/3n3-Filamentogris.jpg"},
-    {id:2003,nombre:"Naranja",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Naranja",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/3n3-naranja.jpg"},
-    {id:2004,nombre:"Azul",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Azul",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/3n3-petg-azul.jpg"},
-    {id:2005,nombre:"Rosa",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Rosa",precio:1600,cantidad:1,img:"../multimedia/fotos/filamentos/3n3-rosa.jpg"}
+    {id:3001,nombre:"Galletero Stich",tipo:"masVendido",numtipo:"100",desc:"Galletero impreso en 3D Stich",precio:1600,cantidad:1,img:"multimedia/fotos/masVendidos/CarameleraStich.jpg"},
+    {id:3,nombre:"Mate Copa del mundo",tipo:"masVendido",numtipo:"100",desc:"Filamento para impresora 3D",precio:1600,cantidad:1,img:"multimedia/fotos/masVendidos/MateCopaDelMundo.jpg"},
+    {id:3003,nombre:"Set esponjas Stich",tipo:"presentacion",numTipo:1000,cantidad:1,desc:"Set espojas de stich",precio:6000,personaje:"Stich",img:"multimedia/fotos/productos/SetEsponjasStich.jpg"},
+    {id:6,nombre:"Mate Spiderman",tipo:"presentacion",numTipo:1,cantidad:1,desc:"Mate cabeza de spiderman",precio:1600,personaje:"Spiderman",img:"multimedia/fotos/productos/spiderman.jpg"},
+    {id:3005,nombre:"Soporte Joystick mano",tipo:"presentacion",numTipo:2,cantidad:1,desc:"Soporte para celular o joystick en forma de mano impresa en 3D",precio:1200,personaje:"Mano ",img:"multimedia/fotos/productos/soporte-joystick-mano.jpg"},
+    {id:3006,nombre:"Roberto Plant",tipo:"presentacion",numTipo:5,cantidad:1,desc:"Maceta Roberto Plant rosa impresa en 3D",precio:1200,personaje:"Roberto Plant",img:"multimedia/fotos/productos/RobertPlant.jpg"},
+    {id:3007,nombre:"Homero Simpson",tipo:"presentacion",numTipo:4,cantidad:1,desc:"Porta esponjas Homero Simpson impresa en 3D",precio:1200,personaje:"Homero Simpson",img:"multimedia/fotos/productos/PortaEsponjasHomeroSimpson.jpg"},
+    {id:3008,nombre:"Lampara Harry Potter",tipo:"presentacion",numTipo:7,cantidad:1,desc:"Lampara luna impresa en 3D",precio:1200,personaje:"Harrry Potter",img:"multimedia/fotos/productos/LunaConGorrito.jpg"},
+    {id:2009,nombre:"Blanco",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Blanco",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/Blanco.jpg"},
+    {id:2010,nombre:"Bronce",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Bronce",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/Bronce.jpg"},
+    {id:2011,nombre:"Caribe",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Caribe",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/Caribe.jpg"},
+    {id:2012,nombre:"Chocolate",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Chocolate",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/Chocolate.jpg"},
+    {id:2002,nombre:"Gris",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Gris",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/3n3-Filamentogris.jpg"},
+    {id:2003,nombre:"Naranja",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Naranja",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/3n3-naranja.jpg"},
+    {id:2004,nombre:"Azul",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Azul",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/3n3-petg-azul.jpg"},
+    {id:2005,nombre:"Rosa",tipo:"presentacionFilamento",numtipo:"100",desc:"Filamento para impresora 3D", color:"Rosa",precio:1600,cantidad:1,img:"multimedia/fotos/filamentos/3n3-rosa.jpg"}
 ]
 let numCategoria = [{Mate:1},{Figura:2},{SetMatero:3},{Esponjas:4},{Macetas:5},{Tazas:6},{Lampara:7},{Llavero:8},{MatePers:9}]
 
